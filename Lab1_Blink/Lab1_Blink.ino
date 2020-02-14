@@ -34,11 +34,57 @@ void timedBlink(int interval)
   digitalWrite(2, LOW);    // turn the LED off by making the voltage LOW
   delay(interval); 
 }
+void dimmer(int freq, int duty) {
+  int period, onTime, offTime;
+  period = 1000/freq;
+  onTime = period * duty / 100;
+  offTime = period - onTime;
+  digitalWrite(2, HIGH);
+  delay(onTime);
+  digitalWrite(2, LOW);
+  delay(offTime);
+}
 
 // the loop function runs over and over again forever
 void loop() {
-  timedBlink(250);
-  timedBlink(500);
-  timedBlink(1000);
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(100-i, 20);
+    }
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(90, 20);
+    }
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(80, 20);
+    }
+     for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(70, 20);
+    }
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(60, 20);
+    }
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(50, 20);
+    }
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(40, 20);
+    }
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(30, 20);
+    }
+    for (int i = 0; i <= 100; i+=10)
+    {
+      dimmer(20, 20);
+    }
+    
+   
+  
   // wait for a second
 }
