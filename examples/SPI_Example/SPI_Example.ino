@@ -18,14 +18,13 @@
 
 #include <SPI.h>
 
-static const int spiClk = 1000000; // 1 MHz
-
+static const int spiClk = 1000000; // 1 mhz
 //uninitalised pointers to SPI objects
 SPIClass *vspi = NULL;
 
 void setup()
 {
-    Serial.begin(115200);
+    Serial.begin(9600);
 
     //initialise two instances of the SPIClass attached to VSPI and HSPI respectively
     vspi = new SPIClass(VSPI);
